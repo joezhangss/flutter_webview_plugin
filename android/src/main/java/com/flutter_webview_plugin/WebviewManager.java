@@ -392,7 +392,10 @@ class WebviewManager {
 
         webView.getSettings().setSupportMultipleWindows(supportMultipleWindows);
 
-        webView.getSettings().setAppCacheEnabled(appCacheEnabled);
+        //fit android 13 -- 2023.8.25 start
+        // webView.getSettings().setAppCacheEnabled(appCacheEnabled);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        //fit android 13 -- 2023.8.25 end
 
         webView.getSettings().setAllowFileAccessFromFileURLs(allowFileURLs);
         webView.getSettings().setAllowUniversalAccessFromFileURLs(allowFileURLs);
